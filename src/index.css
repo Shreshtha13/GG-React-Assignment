@@ -3,6 +3,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
@@ -34,21 +35,38 @@ code {
   border-radius: 5px;
 }
 
-.displayCard {
+
+
+.card img:hover{
+  filter: blur(5px);
+  transition: 0.1s ease-in;
+}
+.card p{
+  color: white;
   position: absolute;
-  border: solid 2px red;
-  margin-inline: 24rem;
-  height: auto;
-  background-color: antiquewhite;
+  margin-left: 1rem;
   z-index: 400;
 }
 
-.displayCard li{
+.displayCard {
+  position: absolute;
+  border: solid 2px rgb(34, 30, 94);
+  border-radius: 10px;
+  margin-inline: 24rem;
+  height: auto;
+  background-color: rgb(5, 13, 41);
+  z-index: 400;
+}
+
+.displayCard p{
   margin-block: 1rem;
   font-size: 20px;
+  color: whitesmoke;
+  margin-inline: 1.5rem;
 }
 
 .displayCard img{
   position: relative;
   margin-inline: 12rem;
+
 }

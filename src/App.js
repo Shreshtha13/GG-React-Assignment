@@ -64,7 +64,7 @@ const App = () => {
       movieList.map(m => {
         return (
           <div key={m.imdbID + m.Year} className="card">
-            <li key={m.Year} onClick={displayInfo} style={{ cursor: 'pointer' }}>{m.Title} </li>
+            <p key={m.Year} onClick={displayInfo} style={{ cursor: 'pointer' }}>{m.Title} </p>
             <img key={m.imdbID} src={m.Poster} alt="Movie Poster" />
           </div>
         )
@@ -88,11 +88,11 @@ const App = () => {
       <div className="displayCard" style={{visibility:movieDetails.Title===undefined?'hidden' : 'visible'}}>
         <button onClick={closeDisplay}>Close</button>
         <img src={movieDetails.Poster} alt='movie poster'/>
-        <li>Title : {movieDetails.Title}</li>
-        <li>Year : {movieDetails.Year}</li>
-        <li>Cast : {movieDetails.Cast}</li>
-        <li>Plot : {movieDetails.Plot}</li>
-        <li>imdb Rating : {movieDetails.imdbRating}</li>
+        <p>Title : {movieDetails.Title}</p>
+        <p>Year : {movieDetails.Year}</p>
+        <p>Cast : {movieDetails.Cast}</p>
+        <p>Plot : {movieDetails.Plot}</p>
+        <p>imdb Rating : {movieDetails.imdbRating}</p>
       </div>
       <div className="movieCards" style={{filter : movieDetails.Title!==undefined ? 'blur(10px)' : 'blur(0px)' }}>
         <MoviesList></MoviesList>
