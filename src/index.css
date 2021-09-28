@@ -1,13 +1,54 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.searchBox {
+  width: 300px;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  padding: 10px;
+}
+
+.movieTitle {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.movieCards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  margin-inline: auto;
+  border: solid 2px black;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.displayCard {
+  position: absolute;
+  border: solid 2px red;
+  margin-inline: 24rem;
+  height: auto;
+  background-color: antiquewhite;
+  z-index: 400;
+}
+
+.displayCard li{
+  margin-block: 1rem;
+  font-size: 20px;
+}
+
+.displayCard img{
+  position: relative;
+  margin-inline: 12rem;
 }
