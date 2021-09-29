@@ -57,6 +57,9 @@ code {
   position: absolute;
   width: 19rem;
   transition: 0.2s ease-in;
+  color: aliceblue;
+  z-index: 400;
+ 
 }
 
 .displayCard {

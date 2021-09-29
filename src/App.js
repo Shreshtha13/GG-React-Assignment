@@ -64,8 +64,8 @@ const App = () => {
       movieList.map(m => {
         return (
           <div key={m.imdbID + m.Year} className="card">
-            <div className='hoverCard'>
-              <p key={m.Year} onClick={displayInfo} style={{ cursor: 'pointer' }}>{m.Title} </p>
+            <div className='hoverCard' key={m.Year} onClick={displayInfo} style={{ cursor: 'pointer' }}>
+              {m.Title}
             </div>
             <img key={m.imdbID} src={m.Poster} alt="Movie Poster" />
           </div>
