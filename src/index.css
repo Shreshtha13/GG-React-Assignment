@@ -37,25 +37,37 @@ code {
 
 
 
-.card img:hover{
-  filter: blur(5px);
-  transition: 0.1s ease-in;
-}
 .card p{
-  color: white;
+  color: azure;
   position: absolute;
   margin-left: 1rem;
   z-index: 400;
 }
 
-.displayCard {
+.hoverCard{
+  height: 28rem;
   position: absolute;
+  width: 19rem;
+}
+
+.hoverCard:hover{
+  visibility: visible;
+  background: rgba(0,0,0,0.5);
+  height: 28rem;
+  position: absolute;
+  width: 19rem;
+  transition: 0.2s ease-in;
+}
+
+.displayCard {
+  position: fixed;
   border: solid 2px rgb(34, 30, 94);
   border-radius: 10px;
   margin-inline: 24rem;
   height: auto;
   background-color: rgb(5, 13, 41);
   z-index: 400;
+  margin-top: -4rem;
 }
 
 .displayCard p{
