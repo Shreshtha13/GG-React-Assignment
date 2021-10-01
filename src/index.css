@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
+  overflow-x: hidden;
 }
 
 code {
@@ -61,18 +62,18 @@ code {
 
 .displayCard {
   position: fixed;
-  border: solid 2px rgb(34, 30, 94);
+  border: solid 2px rgb(6, 4, 32);
   border-radius: 10px;
   margin-inline: 24rem;
   height: auto;
-  background-color: rgb(5, 13, 41);
+  background-color: rgb(7, 12, 32);
   z-index: 400;
   margin-top: -4rem;
 }
 
 .displayCard p {
   margin-block: 1rem;
-  font-size: 20px;
+  font-size: 18px;
   color: whitesmoke;
   margin-inline: 1.5rem;
 }
