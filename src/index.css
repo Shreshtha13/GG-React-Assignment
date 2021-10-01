@@ -35,31 +35,28 @@ code {
   border-radius: 5px;
 }
 
-
-
-.card p{
+.card p {
   color: azure;
   position: absolute;
   margin-left: 1rem;
   z-index: 400;
 }
 
-.hoverCard{
+.hoverCard {
   height: 28rem;
   position: absolute;
   width: 19rem;
 }
 
-.hoverCard:hover{
+.hoverCard:hover {
   visibility: visible;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   height: 28rem;
   position: absolute;
   width: 19rem;
   transition: 0.2s ease-in;
   color: aliceblue;
   z-index: 400;
- 
 }
 
 .displayCard {
@@ -73,15 +70,36 @@ code {
   margin-top: -4rem;
 }
 
-.displayCard p{
+.displayCard p {
   margin-block: 1rem;
   font-size: 20px;
   color: whitesmoke;
   margin-inline: 1.5rem;
 }
 
-.displayCard img{
+.displayCard img {
   position: relative;
   margin-inline: 12rem;
+}
 
+.closeDisplay {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #FFFFFF;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  background: none;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.closeDisplay:hover{
+  background: #ffffff;
+  color: black;
+  transition: 0.2s ease;
 }

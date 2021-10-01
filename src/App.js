@@ -2,12 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import {motion} from 'framer-motion'
 
 
 const App = () => {
 
-  const [searchTerm, setSearchTerm] = useState('avengers')
+  const [searchTerm, setSearchTerm] = useState('')
   const [movieList, setMovieList] = useState([])
   const [movie, setMovie] = useState({
     Title: "",
@@ -87,15 +87,18 @@ const App = () => {
       <form>
         <input className='searchBox' type='text' onChange={handleSearchChange} name="search" />
       </form>
-      <div className="displayCard" style={{ visibility: movieDetails.Title === undefined ? 'hidden' : 'visible' }}>
-        <button onClick={closeDisplay}>Close</button>
+      <motion.div className="displayCard" style={{ visibility: movieDetails.Title === undefined ? 'hidden' : 'visible' }}
+      initial = {{y:'-100rem'}}
+      animate = {{y:'0vh'}}
+      >
+        <button onClick={closeDisplay} className='closeDisplay'>Close</button>
         <img src={movieDetails.Poster} alt='movie poster' />
         <p>Title : {movieDetails.Title}</p>
         <p>Year : {movieDetails.Year}</p>
         <p>Cast : {movieDetails.Cast}</p>
         <p>Plot : {movieDetails.Plot}</p>
         <p>imdb Rating : {movieDetails.imdbRating}</p>
-      </div>
+      </motion.div>
       <div className="movieCards" style={{ filter: movieDetails.Title !== undefined ? 'blur(10px)' : 'blur(0px)' }}>
         <MoviesList></MoviesList>
       </div>
