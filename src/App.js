@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { motion } from 'framer-motion'
+import MoviesList from './comps/MoviesList';
 
 
 const App = () => {
@@ -22,17 +23,9 @@ const App = () => {
     setSearchTerm(event.target.value)
   }
 
-  useEffect(() => {
-    const url = `https://www.omdbapi.com/?apikey=7142622a&s=${searchTerm}`
+  console.log(searchTerm)
 
-    const fetchData = async () => {
-      const response = await axios.get(url);
-      if (response.data.Search !== undefined)
-        setMovieList(response.data.Search)
-    }
 
-    fetchData()
-  }, [searchTerm])
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -59,33 +52,29 @@ const App = () => {
   }
 
 
-  const MoviesList = () => {
-    return (
-      movieList.map(m => {
-        return (
-          <div key={m.imdbID + m.Year} className="card">
-            <div className='hoverCard' key={m.Year} onClick={displayInfo} style={{ cursor: 'pointer' }}>
-              {m.Title}
-            </div>
-            <img key={m.imdbID} src={m.Poster} alt="Movie Poster" />
-          </div>
-        )
-      })
-    )
-  }
-
-  if (movieDetails.Title !== undefined) {
-
-  }
-
   const closeDisplay = () => {
     setMovieDetails({})
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    const url = `https://www.omdbapi.com/?apikey=7142622a&s=${searchTerm}`
+
+    const fetchData = async () => {
+      const response = await axios.get(url);
+      if (response.data.Search !== undefined)
+        setMovieList(response.data.Search)
+    }
+
+    fetchData()
+
+  }
+
+
   return (
     <div>
-      <form>
-        <input className='searchBox' type='text' onChange={handleSearchChange} name="search" />
+      <form onSubmit={handleSubmit}>
+        <input className='searchBox' type='text' name="search" onChange={handleSearchChange} />
       </form>
       <div className="displayCard" style={{ visibility: movieDetails.Title === undefined ? 'hidden' : 'visible' }}>
         <button onClick={closeDisplay} className='closeDisplay'>Close</button>
@@ -97,7 +86,7 @@ const App = () => {
         <p>imdb Rating : {movieDetails.imdbRating}</p>
       </div>
       <div className="movieCards" style={{ filter: movieDetails.Title !== undefined ? 'blur(10px)' : 'blur(0px)' }}>
-        <MoviesList></MoviesList>
+        <MoviesList movieList={movieList} displayInfo={displayInfo} ></MoviesList>
       </div>
     </div>
   )
