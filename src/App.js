@@ -1,9 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { motion } from 'framer-motion'
-import MoviesList from './comps/MoviesList';
+import MoviesList from './components/MoviesList';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import SelectedMovie from './components/SelectedMovie';
+import SearchBox from './components/SearchBox';
 
 
 const App = () => {
@@ -17,44 +17,20 @@ const App = () => {
     Type: "",
     Poster: ""
   })
-  const [movieDetails, setMovieDetails] = useState({})
+ 
+  const [isHome, setIsHome] = useState(true)
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value)
+
   }
-
-  console.log(searchTerm)
-
-
-
-  useEffect(() => {
-    const fetchDetails = async () => {
-      const response = await axios.get(`https://www.omdbapi.com/?apikey=7142622a&t=${movie}`)
-      if (response !== undefined) {
-        setMovieDetails({
-          Title: response.data.Title,
-          Plot: response.data.Plot,
-          Cast: response.data.Actors,
-          Year: response.data.Year,
-          imdbRating: response.data.imdbRating,
-          Poster: response.data.Poster
-        })
-      }
-    }
-    fetchDetails()
-  }, [movie])
-
 
   const displayInfo = (event) => {
+    setIsHome(false)
     setMovie(event.target.outerText)
-    if (movieDetails.Title !== undefined)
-      console.log(movieDetails)
+
   }
 
-
-  const closeDisplay = () => {
-    setMovieDetails({})
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -71,24 +47,33 @@ const App = () => {
   }
 
 
+  const DisplaySelectedMovie = () => {
+    return (
+      <SelectedMovie movie={movie} setIsHome={setIsHome} />
+    )
+  }
+
+  const searchdialog = () => {
+    return (
+      <SearchBox handleSubmit={handleSubmit} handleSearchChange={handleSearchChange} />
+    )
+  }
+
+console.log(isHome)
+
+
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input className='searchBox' type='text' name="search" onChange={handleSearchChange} />
-      </form>
-      <div className="displayCard" style={{ visibility: movieDetails.Title === undefined ? 'hidden' : 'visible' }}>
-        <button onClick={closeDisplay} className='closeDisplay'>Close</button>
-        <img src={movieDetails.Poster} alt='movie poster' />
-        <p>Title : {movieDetails.Title}</p>
-        <p>Year : {movieDetails.Year}</p>
-        <p>Cast : {movieDetails.Cast}</p>
-        <p>Plot : {movieDetails.Plot}</p>
-        <p>imdb Rating : {movieDetails.imdbRating}</p>
+    <Router>
+      {isHome && searchdialog()}
+      <div>
+        <Switch>
+          <Route path='/movie' component={DisplaySelectedMovie} />
+          <div className="movieCards">
+            <MoviesList movieList={movieList} displayInfo={displayInfo} isHome={isHome}></MoviesList>
+          </div>
+        </Switch>
       </div>
-      <div className="movieCards" style={{ filter: movieDetails.Title !== undefined ? 'blur(10px)' : 'blur(0px)' }}>
-        <MoviesList movieList={movieList} displayInfo={displayInfo} ></MoviesList>
-      </div>
-    </div>
+    </Router>
   )
 }
 

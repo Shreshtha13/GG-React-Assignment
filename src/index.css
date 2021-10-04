@@ -47,6 +47,7 @@ code {
   height: 28rem;
   position: absolute;
   width: 19rem;
+  color: rgba(0,0,0,0);
 }
 
 .hoverCard:hover {
@@ -58,32 +59,15 @@ code {
   transition: 0.2s ease-in;
   color: aliceblue;
   z-index: 400;
+  padding:10px 0 0 10px;
 }
 
-.displayCard {
-  position: fixed;
-  border: solid 2px rgb(6, 4, 32);
-  border-radius: 10px;
-  margin-inline: 24rem;
-  height: auto;
-  background-color: rgb(7, 12, 32);
-  z-index: 400;
-  margin-top: -3.6rem;
+.text-details {
+  color: white;
 }
 
-.displayCard p {
-  margin-block: 1rem;
-  font-size: 18px;
-  color: whitesmoke;
-  margin-inline: 1.5rem;
-}
-
-.displayCard img {
-  position: relative;
-  margin-inline: 12rem;
-}
-
-.closeDisplay {
+.go-to-home{
+  
   display: inline-block;
   padding: 0.35em 1.2em;
   border: 0.1em solid #FFFFFF;
@@ -97,10 +81,15 @@ code {
   background: none;
   margin: 10px;
   cursor: pointer;
+
 }
 
-.closeDisplay:hover{
+.go-to-home:hover{
   background: #ffffff;
   color: black;
   transition: 0.2s ease;
+}
+
+.poster {
+  margin-right: 2rem;
 }
