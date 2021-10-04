@@ -47,7 +47,7 @@ code {
   height: 28rem;
   position: absolute;
   width: 19rem;
-  color: rgba(0,0,0,0);
+  color: rgba(0, 0, 0, 0);
 }
 
 .hoverCard:hover {
@@ -59,15 +59,14 @@ code {
   transition: 0.2s ease-in;
   color: aliceblue;
   z-index: 400;
-  padding:10px 0 0 10px;
+  padding: 10px 0 0 10px;
 }
 
 .text-details {
   color: white;
 }
 
-.go-to-home{
-  
+.go-to-home {
   display: inline-block;
   padding: 0.35em 1.2em;
   border: 0.1em solid #FFFFFF;
@@ -81,10 +80,9 @@ code {
   background: none;
   margin: 10px;
   cursor: pointer;
-
 }
 
-.go-to-home:hover{
+.go-to-home:hover {
   background: #ffffff;
   color: black;
   transition: 0.2s ease;
@@ -92,4 +90,21 @@ code {
 
 .poster {
   margin-right: 2rem;
+}
+
+@media(max-width:600px) {
+  .display-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .poster {
+    margin-inline: auto;
+  }
+  .text-details {
+    color: white;
+    border: solid 2px;
+    border-radius: 5px;
+    margin: 14px;
+    padding: 10px;
+  }
 }
