@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/GG-React-Assignment/static/css/main.0ca7b0b9.chunk.css",
-    "main.js": "/GG-React-Assignment/static/js/main.52ae2231.chunk.js",
-    "main.js.map": "/GG-React-Assignment/static/js/main.52ae2231.chunk.js.map",
+    "main.css": "/GG-React-Assignment/static/css/main.5c90cc49.chunk.css",
+    "main.js": "/GG-React-Assignment/static/js/main.39040199.chunk.js",
+    "main.js.map": "/GG-React-Assignment/static/js/main.39040199.chunk.js.map",
     "runtime-main.js": "/GG-React-Assignment/static/js/runtime-main.dda3a8e2.js",
     "runtime-main.js.map": "/GG-React-Assignment/static/js/runtime-main.dda3a8e2.js.map",
-    "static/js/2.2160dcf9.chunk.js": "/GG-React-Assignment/static/js/2.2160dcf9.chunk.js",
-    "static/js/2.2160dcf9.chunk.js.map": "/GG-React-Assignment/static/js/2.2160dcf9.chunk.js.map",
+    "static/js/2.06605146.chunk.js": "/GG-React-Assignment/static/js/2.06605146.chunk.js",
+    "static/js/2.06605146.chunk.js.map": "/GG-React-Assignment/static/js/2.06605146.chunk.js.map",
     "index.html": "/GG-React-Assignment/index.html",
-    "static/css/main.0ca7b0b9.chunk.css.map": "/GG-React-Assignment/static/css/main.0ca7b0b9.chunk.css.map",
-    "static/js/2.2160dcf9.chunk.js.LICENSE.txt": "/GG-React-Assignment/static/js/2.2160dcf9.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/GG-React-Assignment/static/media/logo.6ce24c58.svg"
+    "static/css/main.5c90cc49.chunk.css.map": "/GG-React-Assignment/static/css/main.5c90cc49.chunk.css.map",
+    "static/js/2.06605146.chunk.js.LICENSE.txt": "/GG-React-Assignment/static/js/2.06605146.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dda3a8e2.js",
-    "static/js/2.2160dcf9.chunk.js",
-    "static/css/main.0ca7b0b9.chunk.css",
-    "static/js/main.52ae2231.chunk.js"
+    "static/js/2.06605146.chunk.js",
+    "static/css/main.5c90cc49.chunk.css",
+    "static/js/main.39040199.chunk.js"
   ]
 }
