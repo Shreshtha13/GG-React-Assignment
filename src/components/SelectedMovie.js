@@ -4,17 +4,17 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 import DisplayCard from './DisplayCard'
 
 
-const SelectedMovie = ({ movie, isHome, setIsHome }) => {
+const SelectedMovie = ({ movie, setMovie }) => {
 
     const [movieDetails, setMovieDetails] = useState({})
-
+    
     useEffect(() => {
         const fetchDetails = async () => {
-            const response = await axios.get(`https://www.omdbapi.com/?apikey=7142622a&t=${movie}`)
+            const response = await axios.get(`https://www.omdbapi.com/?apikey=7142622a&i=${movie}`)
             if (response.data.Title !== undefined) {
                 setMovieDetails(response.data)
             }
-            console.log(response.data)
+            
         }
 
         fetchDetails()
@@ -22,8 +22,9 @@ const SelectedMovie = ({ movie, isHome, setIsHome }) => {
 
 
     const clearMovieDetail = () => {
-        setIsHome(true)
         setMovieDetails({})
+        setMovie({})
+        
     }
 
     const disp = () => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import MoviesList from './components/MoviesList';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -10,25 +10,26 @@ const App = () => {
 
   const [searchTerm, setSearchTerm] = useState('')
   const [movieList, setMovieList] = useState([])
-  const [movie, setMovie] = useState({
-    Title: "",
-    Year: "",
-    imdbID: "",
-    Type: "",
-    Poster: ""
-  })
- 
-  const [isHome, setIsHome] = useState(true)
+
+  const [movie, setMovie] = useState('')
+  const cm = window.location.pathname
+  // console.log(cm)
+  // if(cm.length>1){
+  //   setMovie(cm.substring(1))
+  // }
+
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value)
 
   }
 
-  const displayInfo = (event) => {
-    setIsHome(false)
-    setMovie(event.target.outerText)
+  const displayInfo = async (event) => {
 
+    const currentMovie = await event.target.children[0].innerHTML;
+
+    if (currentMovie)
+      setMovie(currentMovie)
   }
 
 
@@ -49,28 +50,38 @@ const App = () => {
 
   const DisplaySelectedMovie = () => {
     return (
-      <SelectedMovie movie={movie} setIsHome={setIsHome} />
+      <SelectedMovie movie={movie} setMovie={setMovie} />
     )
   }
 
-  const searchdialog = () => {
+  const Searchdialog = () => {
     return (
       <SearchBox handleSubmit={handleSubmit} handleSearchChange={handleSearchChange} />
     )
   }
 
-console.log(isHome)
+  if (movie)
+    var movieRoute = `/${movie}`
+  else
+    var movieRoute = '/'
+  // console.log('movie var right now is : ', movie)
 
+  console.log(movieRoute)
 
+  const List = () => {
+    return (
+      <div className="movieCards">
+        <MoviesList movieList={movieList} displayInfo={displayInfo} movieRoute={movieRoute}></MoviesList>
+      </div>
+    )
+  }
   return (
     <Router>
-      {isHome && searchdialog()}
+      {Searchdialog()}
       <div>
         <Switch>
-          <Route path='/movie' component={DisplaySelectedMovie} />
-          <div className="movieCards">
-            <MoviesList movieList={movieList} displayInfo={displayInfo} isHome={isHome}></MoviesList>
-          </div>
+          <Route path='/' exact="true" component={List} />
+          <Route path={movieRoute} component={DisplaySelectedMovie} />
         </Switch>
       </div>
     </Router>

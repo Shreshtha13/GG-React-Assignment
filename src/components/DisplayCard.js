@@ -1,9 +1,10 @@
 import React from 'react'
 
 const DisplayCard = ({ movieDetails }) => {
-    console.log(movieDetails)
+    
     return (
-        <div class='display-card' style={{display:'flex'}}>
+        <div className='display-card' style={{display:'flex'}}>
+            
             <img className='poster' src={movieDetails.Poster} alt='movie/show poster' />
             <div className='text-details'>
                 <div>Title : {movieDetails.Title}</div>
