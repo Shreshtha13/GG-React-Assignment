@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/movies/static/css/main.6a470838.chunk.css",
-    "main.js": "/movies/static/js/main.cb9c674a.chunk.js",
-    "main.js.map": "/movies/static/js/main.cb9c674a.chunk.js.map",
-    "runtime-main.js": "/movies/static/js/runtime-main.4fcc7d6e.js",
-    "runtime-main.js.map": "/movies/static/js/runtime-main.4fcc7d6e.js.map",
-    "static/js/2.37d4e574.chunk.js": "/movies/static/js/2.37d4e574.chunk.js",
-    "static/js/2.37d4e574.chunk.js.map": "/movies/static/js/2.37d4e574.chunk.js.map",
-    "index.html": "/movies/index.html",
-    "static/css/main.6a470838.chunk.css.map": "/movies/static/css/main.6a470838.chunk.css.map",
-    "static/js/2.37d4e574.chunk.js.LICENSE.txt": "/movies/static/js/2.37d4e574.chunk.js.LICENSE.txt"
+    "main.css": "/GG-React-Assignment/static/css/main.6a470838.chunk.css",
+    "main.js": "/GG-React-Assignment/static/js/main.cb9c674a.chunk.js",
+    "main.js.map": "/GG-React-Assignment/static/js/main.cb9c674a.chunk.js.map",
+    "runtime-main.js": "/GG-React-Assignment/static/js/runtime-main.dda3a8e2.js",
+    "runtime-main.js.map": "/GG-React-Assignment/static/js/runtime-main.dda3a8e2.js.map",
+    "static/js/2.37d4e574.chunk.js": "/GG-React-Assignment/static/js/2.37d4e574.chunk.js",
+    "static/js/2.37d4e574.chunk.js.map": "/GG-React-Assignment/static/js/2.37d4e574.chunk.js.map",
+    "index.html": "/GG-React-Assignment/index.html",
+    "static/css/main.6a470838.chunk.css.map": "/GG-React-Assignment/static/css/main.6a470838.chunk.css.map",
+    "static/js/2.37d4e574.chunk.js.LICENSE.txt": "/GG-React-Assignment/static/js/2.37d4e574.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4fcc7d6e.js",
+    "static/js/runtime-main.dda3a8e2.js",
     "static/js/2.37d4e574.chunk.js",
     "static/css/main.6a470838.chunk.css",
     "static/js/main.cb9c674a.chunk.js"
