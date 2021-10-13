@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import MoviesList from './components/MoviesList';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, useParams } from 'react-router-dom'
 import SelectedMovie from './components/SelectedMovie';
 import SearchBox from './components/SearchBox';
+
 
 
 const App = () => {
@@ -17,6 +18,9 @@ const App = () => {
   // if(cm.length>1){
   //   setMovie(cm.substring(1))
   // }
+
+
+    
 
 
   const handleSearchChange = (event) => {
