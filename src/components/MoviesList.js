@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const MoviesList = ({ movieList, displayInfo, isHome, movieRoute }) => {
+const MoviesList = ({ movieList, displayInfo, isHome }) => {
   return (
     movieList.map(m => {
       return (
 
         <div key={m.Title} className="card" >
-          <Link to={movieRoute} exact onClick={displayInfo}>
+          <Link to={m.imdbID} exact onClick={displayInfo}>
             <div className='hoverCard' key={m.imdbID} style={{ cursor: 'pointer' }}>
               {m.Title}
               <div className="imdb-id" style={{color:'rgba(0,0,0,0)'}}>{m.imdbID}</div>
