@@ -64,28 +64,25 @@ const App = () => {
     )
   }
 
-  if (movie)
-    var movieRoute = `/${movie}`
-  else
-    var movieRoute = '/'
-  // console.log('movie var right now is : ', movie)
-
-  console.log(movieRoute)
+  
 
   const List = () => {
     return (
       <div className="movieCards">
-        <MoviesList movieList={movieList} displayInfo={displayInfo} movieRoute={movieRoute}></MoviesList>
+        <MoviesList movieList={movieList} displayInfo={displayInfo}></MoviesList>
       </div>
     )
   }
+
+  
+
   return (
     <Router>
       {Searchdialog()}
       <div>
         <Switch>
           <Route path='/' exact="true" component={List} />
-          <Route path={movieRoute} component={DisplaySelectedMovie} />
+          <Route path={`/:id`} component={DisplaySelectedMovie} />
         </Switch>
       </div>
     </Router>
